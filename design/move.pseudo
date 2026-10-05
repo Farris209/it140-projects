@@ -9,17 +9,28 @@
 
 # TODO 1: Identify the information the movement process needs.
 # Consider the player's current room and movement command.
+SET current_room
+SET movement_command
 
 # TODO 2: Prompt for and receive the player's movement command.
+OUTPUT "Enter movement command:"
+INPUT movement_command
 
 # TODO 3: Validate whether the requested movement is possible from the
 # current room. Show the decision clearly.
+IF movement_command is valid for current_room
 
 # TODO 4: Describe what happens when the movement command is valid.
 # Include the room update and player output.
+    SET current_room to the room in movement_command
+    OUTPUT "You are now in " current_room
 
 # TODO 5: Describe what happens when the movement command is invalid.
 # Include the output the player should receive.
+ELSE
+    OUTPUT "You cannot go that way."
 
 # TODO 6: Show how movement fits into repeated gameplay.
 # The final game continues accepting commands until a required ending occurs.
+WHILE game is not over
+    repeat movement process
