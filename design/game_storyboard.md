@@ -11,7 +11,7 @@ Full Court Quest – A basketball-themed adventure game where the player explore
 
 **Storyline:**
 
-It is championship night, and the player must get ready for the biggest basketball game of the season. The player's equipment has been scattered throughout the arena, and six important items must be collected before entering the basketball court. The player must explore the arena, collect all six items, and avoid entering the court too early. If the player enters the court before collecting everything, the rival team will defeat them. If all six items are collected first, the player is ready to face the rival team and win the championship.
+It is championship night, and the player must get ready for the biggest basketball game of the season. The player's equipment has been scattered throughout the arena, and six important items must be collected before entering the Basketball Court. The player must explore the arena, collect all six items, and avoid entering the court too early. If the player enters the court before collecting everything, the Reigning Champions will defeat them. If all six items are collected first, the player is ready to face the Reigning Champions and win the championship.
 
 ## Rooms
 
@@ -45,7 +45,7 @@ except the start room and villain room.
 
 ## Villain
 
-The Rival Team — The opposing basketball team waiting on the Basketball Court. If the player enters the court before collecting all six items, the rival team defeats the player. If the player has collected all six items, the player is prepared to face the rival team and win the championship.
+The Reigning Champions — The opposing basketball team waiting on the Basketball Court. If the player enters the court before collecting all six items, the Reigning Champions defeat the player. If the player has collected all six items, the player is prepared to face the Reigning Champions and win the championship.
 
 ## Storyboard and Map Check
 
