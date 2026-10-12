@@ -25,8 +25,8 @@ while current_room != "exit":
             current_room = rooms[current_room][direction]
         else:
             print("You cannot go that way.")
-else:
-    print("Invalid command. Please try again.")
+    else:
+        print("Invalid command. Please try again.")
         
 # Within the loop, complete the required behavior in small steps:
 #   1. Display the current room.
