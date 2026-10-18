@@ -14,10 +14,11 @@ def show_instructions():
 
 def show_status(current_room, inventory, rooms):
     """Display the player's current game status."""
-    # TODO: Show the current room.
-    # TODO: Show the current inventory.
-    # TODO: Show the current-room item when one is available.
-    pass
+    print("You are in the", current_room)
+    print("Inventory:", inventory)
+    if "item" in rooms[current_room]:
+        print("You see:", rooms[current_room]["item"])
+    print("--------------------")
 
 
 def main():
@@ -40,7 +41,7 @@ def main():
             "east": "Coach's Office",
             "item": "Basketball Shoes"
         },
-        "Coach's Room": {
+        "Coach's Office": {
             "west": "Weight Room",
             "east": "Medical Room",
             "item": "Playbook"
@@ -60,25 +61,56 @@ def main():
             "east": "Film Room",
          },
     }
-    # TODO: Set the player's starting room.
+    
+    current_room = "Locker Room"
+    inventory = []
+    show_instructions()
 
-    # TODO: Create the player's inventory.
+    while True:
+        show_status(current_room, inventory, rooms)
 
-    # TODO: Call the instruction function at the appropriate time.
+        if current_room == "Basketball Court":
+            if len(inventory) == 6:
+                print("You defeated the Reigning Champions!")
+                print("Congratualtions! You win the Championship!")
+            else:
+                print("You entered the court without all six items.")
+                print("The Reigning Champions defeat you. GAME OVER!")
+            break
+            
+        command = input("Enter your move: ").strip()
+        parts = command.split(maxsplit=1)
 
-    # TODO: Create the gameplay loop.
-    # Within the loop:
-    #   - Show player status.
-    #   - Prompt for the player's next command.
-    #   - Handle valid movement commands.
-    #   - Handle valid get-item commands.
-    #   - Validate invalid commands.
-    #   - Update room/inventory state when appropriate.
-    #   - Detect and display the required winning outcome.
-    #   - Detect and display the required losing outcome.
-    #   - End the loop when the player has won or lost.
-    pass
+        if len(parts) != 2:
+            print("Enter go <direction> or get <item name>.")
+            continue
 
+        action = parts[0].lower()
+        argument = parts[1].lower()
+
+        if action == "go":
+            if argument not in ("north", "south", "east", "west"):
+                print("Use north, south, east, or west.")
+            elif argument in rooms[current_room]:
+                current_room = rooms[current_room][argument]
+            else:
+                print("You cannot go that way.")
+
+        elif action == "get":
+            room_item = rooms[current_room].get("item")
+            if room_item is None:
+                print("There is no item to collect in this room.")
+            elif argument == room_item.lower():
+                inventory.append(room_item)
+                del rooms[current_room]["item"]
+                print(room_item, "added to inventory.")
+            else:
+                print("That item is not available in this room.")
+
+        else:
+            print("Unknown command. Use go <direction> or get <item name>.")
+            
+    print("Thanks for playing Full Court Quest!")
 
 if __name__ == "__main__":
     main()
