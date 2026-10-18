@@ -23,7 +23,7 @@ def show_status(current_room, inventory, rooms):
 
 def main():
     """Run the main gameplay loop."""
-    # TODO: Create the full room/item dictionary from your Project One map.
+     # Link rooms and equipment using the Project One map.
     rooms = {
         "Locker Room": {"west": "Training Room", "north": "Basketball Court"},
         "Training Room": {
@@ -72,7 +72,7 @@ def main():
         if current_room == "Basketball Court":
             if len(inventory) == 6:
                 print("You defeated the Reigning Champions!")
-                print("Congratualtions! You win the Championship!")
+                print("Congratulations! You win the championship!")
             else:
                 print("You entered the court without all six items.")
                 print("The Reigning Champions defeat you. GAME OVER!")
